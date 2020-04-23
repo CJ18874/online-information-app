@@ -25,10 +25,17 @@ export default function ButtonAppBar() {
     const [open, setOpen] = React.useState(false);
     const handleDrawerOpen = () => { setOpen(true) };
 
+    //const wrapper = React.useRef();
+    //const MenuDrawerRef = React.forwardRef((props, ref) => {
+    //    return (
+    //        <MenuDrawer ref={ref} {...props} />
+    //    )
+    //});
+
     return (
         <div className={classes.root}>
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar variant="dense" color="inherit">
                     <IconButton
                         edge="start"
                         className={classes.menuButton}
@@ -36,10 +43,8 @@ export default function ButtonAppBar() {
                         aria-label="menu"
                         onClick={handleDrawerOpen}>
                         <MenuIcon />
+                        <Typography variant="h6" className={classes.title}>Online Information</Typography>
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        Online Information
-                    </Typography>
                 </Toolbar>
             </AppBar>
             <MenuDrawer open={open} setOpen={setOpen} />
