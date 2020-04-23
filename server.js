@@ -17,7 +17,6 @@ if (!dev) {
     app.get('/*', function (req, res) { res.sendFile(path.join(__dirname, 'build', 'index.html')); });
 }
 
-//app.listen(port, () => console.log(`Start listening at http://localhost:${port}`))
 http.createServer(app).listen(port, function () {
     console.log(`Start listening at http://localhost:${port}`)
 });
